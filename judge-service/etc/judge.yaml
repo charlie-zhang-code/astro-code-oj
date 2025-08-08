@@ -4,29 +4,36 @@ Port: 8888
 
 Languages:
   - name: "go"
+    SourceFile: "Main"
     extension: ".go"
     compileCmd: ["go", "build", "-o", "{output}", "{source}"]
     runCmd: ["./{output}"]
   
   - name: "python"
+    SourceFile: "Main"
     extension: ".py"
     compileCmd: []
     runCmd: ["python3", "{source}"]
   
   - name: "java"
+    SourceFile: "Main"
     extension: ".java"
     compileCmd: ["javac", "{source}"]
     runCmd: ["java", "-cp", "{output}", "Main"]
   
   - name: "c"
+    SourceFile: "Main"
     extension: ".c"
     compileCmd: ["gcc", "{source}", "-o", "{output}"]
     runCmd: ["./{output}"]
   
   - name: "cpp"
+    SourceFile: "Main"
     extension: ".cpp"
     compileCmd: ["g++", "{source}", "-o", "{output}"]
     runCmd: ["./{output}"]
+
+Workspace: "/tmp/judge_workspace/submissions"
 
 RabbitMQ:
   Host: "amqp://root:123456@localhost:5672/"
