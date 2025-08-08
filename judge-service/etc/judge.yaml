@@ -1,0 +1,47 @@
+Name: judge-service
+Host: 0.0.0.0
+Port: 8888
+
+Languages:
+  - name: "go"
+    extension: ".go"
+    compileCmd: ["go", "build", "-o", "{output}", "{source}"]
+    runCmd: ["./{output}"]
+  
+  - name: "python"
+    extension: ".py"
+    compileCmd: []
+    runCmd: ["python3", "{source}"]
+  
+  - name: "java"
+    extension: ".java"
+    compileCmd: ["javac", "{source}"]
+    runCmd: ["java", "-cp", "{output}", "Main"]
+  
+  - name: "c"
+    extension: ".c"
+    compileCmd: ["gcc", "{source}", "-o", "{output}"]
+    runCmd: ["./{output}"]
+  
+  - name: "cpp"
+    extension: ".cpp"
+    compileCmd: ["g++", "{source}", "-o", "{output}"]
+    runCmd: ["./{output}"]
+
+RabbitMQ:
+  Host: "amqp://root:123456@localhost:5672/"
+  VirtualHost: "/"
+  Problems:
+    JudgeExchange: "problem.judge.exchange"
+    JudgeQueue: "problem.judge.queue"
+    JudgeRoutingKey: "problem.judge.routing.key"
+    ResultExchange: "problem.result.exchange"
+    ResultQueue: "problem.result.queue"
+    ResultRoutingKey: "problem.result.routing.key"
+  Sets:
+    JudgeExchange: "set.judge.exchange"
+    JudgeQueue: "set.judge.queue"
+    JudgeRoutingKey: "set.judge.routing.key"
+    ResultExchange: "set.result.exchange"
+    ResultQueue: "set.result.queue"
+    ResultRoutingKey: "set.result.routing.key"
