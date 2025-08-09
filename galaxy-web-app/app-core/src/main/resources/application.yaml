@@ -1,7 +1,5 @@
 server:
   port: 83
-#  servlet:
-#    context-path: /core
 
 spring:
   application:
