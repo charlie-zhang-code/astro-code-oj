@@ -4,34 +4,49 @@ Port: 8888
 
 Languages:
   - name: "go"
-    SourceFile: "Main"
+    sourceFile: "Main"
+    compileFile: "Main"
+    defaultCompileTime: 500
+    defaultExecTime: 500
     extension: ".go"
-    compileCmd: ["go", "build", "-o", "{output}", "{source}"]
-    runCmd: ["./{output}"]
+    compileCmd: ["go", "build", "-o", "{exec}", "{source}"]
+    runCmd: ["{exec}"]
   
   - name: "python"
-    SourceFile: "Main"
+    sourceFile: "Main"
+    compileFile: "Main"
+    defaultCompileTime: 500
+    defaultExecTime: 500
     extension: ".py"
     compileCmd: []
     runCmd: ["python3", "{source}"]
   
   - name: "java"
-    SourceFile: "Main"
+    sourceFile: "Main"
+    compileFile: "Main"
+    defaultCompileTime: 500
+    defaultExecTime: 500
     extension: ".java"
     compileCmd: ["javac", "{source}"]
-    runCmd: ["java", "-cp", "{output}", "Main"]
+    runCmd: ["java", "-cp", "{exec}", "Main"]
   
   - name: "c"
-    SourceFile: "Main"
+    sourceFile: "Main"
+    compileFile: "Main"
+    defaultCompileTime: 500
+    defaultExecTime: 500
     extension: ".c"
-    compileCmd: ["gcc", "{source}", "-o", "{output}"]
-    runCmd: ["./{output}"]
+    compileCmd: ["gcc", "{exec}", "-o", "{output}"]
+    runCmd: ["{exec}"]
   
   - name: "cpp"
-    SourceFile: "Main"
+    sourceFile: "Main"
+    compileFile: "Main"
+    defaultCompileTime: 500
+    defaultExecTime: 500
     extension: ".cpp"
-    compileCmd: ["g++", "{source}", "-o", "{output}"]
-    runCmd: ["./{output}"]
+    compileCmd: ["g++", "{source}", "-o", "{exec}"]
+    runCmd: ["{exec}"]
 
 Workspace: "/tmp/judge_workspace/submissions"
 
