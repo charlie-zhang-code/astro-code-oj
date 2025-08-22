@@ -6,7 +6,7 @@ spring:
     name: app-core
   profiles:
 #    active: @profiles.active@
-    active: public
+    active: local
   cloud:
     nacos:
       server-addr: @nacos.server-addr@
