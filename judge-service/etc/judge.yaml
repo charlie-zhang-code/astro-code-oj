@@ -51,7 +51,7 @@ Languages:
 Workspace: "/tmp/judge_workspace/submissions"
 
 RabbitMQ:
-  Host: "amqp://root:123456@192.168.32.178:5672/"
+  Host: "amqp://root:123456@localhost:5672/"
   VirtualHost: "/"
   Problems:
     JudgeExchange: "problem.judge.exchange"
