@@ -57,9 +57,9 @@ RabbitMQ:
     JudgeExchange: "problem.judge.exchange"
     JudgeQueue: "problem.judge.queue"
     JudgeRoutingKey: "problem.judge.routing.key"
-    ResultExchange: "problem.result.exchange"
-    ResultQueue: "problem.result.queue"
-    ResultRoutingKey: "problem.result.routing.key"
+    ResultExchange: "problem.judge.result.exchange"
+    ResultQueue: "problem.judge.result.queue"
+    ResultRoutingKey: "problem.judge.result.routing.key"
   Sets:
     JudgeExchange: "set.judge.exchange"
     JudgeQueue: "set.judge.queue"
